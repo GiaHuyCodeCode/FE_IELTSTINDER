@@ -22,6 +22,7 @@ import {
 import { useHandleResponseError } from "../../hooks/useHandleResponseError";
 import { UserProfileModel } from "../../models/user";
 import { setLoading, updateUserProfile } from "../../redux/globalSlice";
+ // THEM RESPONSIVE
 
 interface ProfileProps {}
 
@@ -166,178 +167,355 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
   }, [isOpenChageUserInfo]);
 
   return (
+    // <div className="profile-page">
+    //   <div className="profile-page__header">
+    //     <h3>User Profile</h3>
+    //     <div className="flex-row items-center gap-2">
+    //       <button onClick={() => setIsOpenChangeAvatar(true)}>
+    //         Change avatar
+    //       </button>
+    //       <button onClick={() => setIsOpenChageUserInfo(true)}>
+    //         Edit profile
+    //       </button>
+    //     </div>
+    //   </div>
+    //   <div className="profile-page__content">
+    //     <img src={profile.avatar} alt="avatar" />
+    //     <div className="user-info">
+    //       <div className="flex-row items-center gap-2">
+    //         <FaUser style={{ fontSize: "24px" }} />
+    //         <span className="name">{`${profile.first_name} ${profile.last_name}`}</span>
+    //       </div>
+    //       <div className="flex-row items-center gap-2">
+    //         <MdAlternateEmail style={{ fontSize: "24px" }} />
+    //         <span style={{ fontSize: "16px" }}>{profile.email}</span>
+    //       </div>
+    //       <div className="flex-row items-center gap-2">
+    //         <FaHome style={{ fontSize: "24px" }} />
+    //         <span style={{ fontSize: "16px" }}>{profile.address}</span>
+    //       </div>
+    //       <div className="flex-row items-center gap-2">
+    //         {profile.gender === "Male" ? (
+    //           <FaMale style={{ fontSize: "24px" }} />
+    //         ) : (
+    //           <FaFemale style={{ fontSize: "24px" }} />
+    //         )}
+    //         <span style={{ fontSize: "16px" }}>{profile.gender}</span>
+    //       </div>
+    //       <div className="flex-row items-center gap-2">
+    //         <FaBirthdayCake style={{ fontSize: "24px" }} />
+    //         <span style={{ fontSize: "16px" }}>{profile.age}</span>
+    //       </div>
+    //       <div className="flex-row items-center gap-2">
+    //         <FaFlag style={{ fontSize: "24px" }} />
+    //         <Tag
+    //           color={
+    //             ["A1", "A2"].includes(profile.level)
+    //               ? "success"
+    //               : ["B1", "B2"].includes(profile.level)
+    //               ? "warning"
+    //               : "error"
+    //           }
+    //           style={{ fontSize: "16px", fontWeight: 600 }}
+    //         >
+    //           {profile.level}
+    //         </Tag>
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <div className="profile-page__description">
+    //     <p>{profile.description || "No description"}</p>
+    //   </div>
+
+    //   <Modal
+    //     title="Change avatar"
+    //     open={isOpenChangeAvatar}
+    //     centered
+    //     onCancel={() => setIsOpenChangeAvatar(false)}
+    //     footer={null}
+    //     maskClosable={false}
+    //     width={600}
+    //     destroyOnClose
+    //   >
+    //     <div className="change-avatar">
+    //       <label htmlFor="input__image">Select image</label>
+    //       <input
+    //         type="file"
+    //         id="input__image"
+    //         name="input__image"
+    //         accept="image/*"
+    //         ref={inputImageRef}
+    //       />
+    //       <div className="change-avatar__footer">
+    //         <button onClick={handleChangeAvatar}>Save</button>
+    //       </div>
+    //     </div>
+    //   </Modal>
+
+    //   <Modal
+    //     title="Edit profile"
+    //     open={isOpenChageUserInfo}
+    //     centered
+    //     onCancel={() => setIsOpenChageUserInfo(false)}
+    //     footer={null}
+    //     maskClosable={false}
+    //     width={700}
+    //     destroyOnClose
+    //   >
+    //     <form
+    //       onSubmit={handleSubmit(handleUpdateUserInfo)}
+    //       className="edit-profile"
+    //     >
+    //       <div className="column">
+    //         <label htmlFor="input_first_name">First Name</label>
+    //         <input
+    //           id="input_first_name"
+    //           type="text"
+    //           placeholder="Enter your first name"
+    //           {...register("firstName")}
+    //         />
+    //         {errors.firstName && (
+    //           <span className="error">{errors.firstName.message}</span>
+    //         )}
+    //       </div>
+    //       <div className="column">
+    //         <label htmlFor="input_last_name">Last Name</label>
+    //         <input
+    //           id="input_last_name"
+    //           type="text"
+    //           placeholder="Enter your last name"
+    //           {...register("lastName")}
+    //         />
+    //         {errors.lastName && (
+    //           <span className="error">{errors.lastName.message}</span>
+    //         )}
+    //       </div>
+    //       <div className="column">
+    //         <label htmlFor="input_email">Email</label>
+    //         <input
+    //           id="input_email"
+    //           name="input_email"
+    //           type="text"
+    //           placeholder="Enter your email"
+    //           readOnly
+    //           value={profile.email}
+    //         />
+    //       </div>
+    //       <div className="column">
+    //         <label htmlFor="input_address">Address</label>
+    //         <input
+    //           id="input_address"
+    //           type="text"
+    //           placeholder="Enter your address"
+    //           {...register("address")}
+    //         />
+    //         {errors.address && (
+    //           <span className="error">{errors.address.message}</span>
+    //         )}
+    //       </div>
+    //       <div className="column">
+    //         <label htmlFor="input_age">Age</label>
+    //         <input
+    //           id="input_age"
+    //           type="text"
+    //           placeholder="Enter your age"
+    //           {...register("age")}
+    //         />
+    //         {errors.age && <span className="error">{errors.age.message}</span>}
+    //       </div>
+    //       <div className="column">
+    //         <label htmlFor="select__age">Gender</label>
+    //         <select id="select__age" {...register("gender")}>
+    //           <option value={1}>Male</option>
+    //           <option value={0}>Female</option>
+    //         </select>
+    //         {errors.gender && (
+    //           <span className="error">{errors.gender.message}</span>
+    //         )}
+    //       </div>
+    //       <div className="column col-span-2">
+    //         <button type="submit">Save</button>
+    //       </div>
+    //     </form>
+    //   </Modal>
+    // </div>
+
     <div className="profile-page">
-      <div className="profile-page__header">
-        <h3>User Profile</h3>
-        <div className="flex-row items-center gap-2">
-          <button onClick={() => setIsOpenChangeAvatar(true)}>
-            Change avatar
-          </button>
-          <button onClick={() => setIsOpenChageUserInfo(true)}>
-            Edit profile
-          </button>
+  <div className="profile-page__header">
+    <h3>User Profile</h3>
+    <div className="profile-page__actions">
+      <button onClick={() => setIsOpenChangeAvatar(true)}>
+        Change avatar
+      </button>
+      <button onClick={() => setIsOpenChageUserInfo(true)}>
+        Edit profile
+      </button>
+    </div>
+  </div>
+  <div className="profile-page__content">
+    <div className="profile-page__avatar">
+      <img src={profile.avatar} alt="avatar" />
+    </div>
+    <div className="profile-page__info">
+      <div className="user-info">
+        <div className="user-info__item">
+          <FaUser className="user-info__icon" />
+          <span className="user-info__text name">{`${profile.first_name} ${profile.last_name}`}</span>
         </div>
-      </div>
-      <div className="profile-page__content">
-        <img src={profile.avatar} alt="avatar" />
-        <div className="user-info">
-          <div className="flex-row items-center gap-2">
-            <FaUser style={{ fontSize: "24px" }} />
-            <span className="name">{`${profile.first_name} ${profile.last_name}`}</span>
-          </div>
-          <div className="flex-row items-center gap-2">
-            <MdAlternateEmail style={{ fontSize: "24px" }} />
-            <span style={{ fontSize: "16px" }}>{profile.email}</span>
-          </div>
-          <div className="flex-row items-center gap-2">
-            <FaHome style={{ fontSize: "24px" }} />
-            <span style={{ fontSize: "16px" }}>{profile.address}</span>
-          </div>
-          <div className="flex-row items-center gap-2">
-            {profile.gender === "Male" ? (
-              <FaMale style={{ fontSize: "24px" }} />
-            ) : (
-              <FaFemale style={{ fontSize: "24px" }} />
-            )}
-            <span style={{ fontSize: "16px" }}>{profile.gender}</span>
-          </div>
-          <div className="flex-row items-center gap-2">
-            <FaBirthdayCake style={{ fontSize: "24px" }} />
-            <span style={{ fontSize: "16px" }}>{profile.age}</span>
-          </div>
-          <div className="flex-row items-center gap-2">
-            <FaFlag style={{ fontSize: "24px" }} />
-            <Tag
-              color={
-                ["A1", "A2"].includes(profile.level)
-                  ? "success"
-                  : ["B1", "B2"].includes(profile.level)
-                  ? "warning"
-                  : "error"
-              }
-              style={{ fontSize: "16px", fontWeight: 600 }}
-            >
-              {profile.level}
-            </Tag>
-          </div>
+        <div className="user-info__item">
+          <MdAlternateEmail className="user-info__icon" />
+          <span className="user-info__text">{profile.email}</span>
+        </div>
+        <div className="user-info__item">
+          <FaHome className="user-info__icon" />
+          <span className="user-info__text">{profile.address}</span>
+        </div>
+        <div className="user-info__item">
+          {profile.gender === "Male" ? (
+            <FaMale className="user-info__icon" />
+          ) : (
+            <FaFemale className="user-info__icon" />
+          )}
+          <span className="user-info__text">{profile.gender}</span>
+        </div>
+        <div className="user-info__item">
+          <FaBirthdayCake className="user-info__icon" />
+          <span className="user-info__text">{profile.age}</span>
+        </div>
+        <div className="user-info__item">
+          <FaFlag className="user-info__icon" />
+          <Tag
+            color={
+              ["A1", "A2"].includes(profile.level)
+                ? "success"
+                : ["B1", "B2"].includes(profile.level)
+                ? "warning"
+                : "error"
+            }
+            className="user-info__tag"
+          >
+            {profile.level}
+          </Tag>
         </div>
       </div>
       <div className="profile-page__description">
         <p>{profile.description || "No description"}</p>
       </div>
-
-      <Modal
-        title="Change avatar"
-        open={isOpenChangeAvatar}
-        centered
-        onCancel={() => setIsOpenChangeAvatar(false)}
-        footer={null}
-        maskClosable={false}
-        width={600}
-        destroyOnClose
-      >
-        <div className="change-avatar">
-          <label htmlFor="input__image">Select image</label>
-          <input
-            type="file"
-            id="input__image"
-            name="input__image"
-            accept="image/*"
-            ref={inputImageRef}
-          />
-          <div className="change-avatar__footer">
-            <button onClick={handleChangeAvatar}>Save</button>
-          </div>
-        </div>
-      </Modal>
-
-      <Modal
-        title="Edit profile"
-        open={isOpenChageUserInfo}
-        centered
-        onCancel={() => setIsOpenChageUserInfo(false)}
-        footer={null}
-        maskClosable={false}
-        width={700}
-        destroyOnClose
-      >
-        <form
-          onSubmit={handleSubmit(handleUpdateUserInfo)}
-          className="edit-profile"
-        >
-          <div className="column">
-            <label htmlFor="input_first_name">First Name</label>
-            <input
-              id="input_first_name"
-              type="text"
-              placeholder="Enter your first name"
-              {...register("firstName")}
-            />
-            {errors.firstName && (
-              <span className="error">{errors.firstName.message}</span>
-            )}
-          </div>
-          <div className="column">
-            <label htmlFor="input_last_name">Last Name</label>
-            <input
-              id="input_last_name"
-              type="text"
-              placeholder="Enter your last name"
-              {...register("lastName")}
-            />
-            {errors.lastName && (
-              <span className="error">{errors.lastName.message}</span>
-            )}
-          </div>
-          <div className="column">
-            <label htmlFor="input_email">Email</label>
-            <input
-              id="input_email"
-              name="input_email"
-              type="text"
-              placeholder="Enter your email"
-              readOnly
-              value={profile.email}
-            />
-          </div>
-          <div className="column">
-            <label htmlFor="input_address">Address</label>
-            <input
-              id="input_address"
-              type="text"
-              placeholder="Enter your address"
-              {...register("address")}
-            />
-            {errors.address && (
-              <span className="error">{errors.address.message}</span>
-            )}
-          </div>
-          <div className="column">
-            <label htmlFor="input_age">Age</label>
-            <input
-              id="input_age"
-              type="text"
-              placeholder="Enter your age"
-              {...register("age")}
-            />
-            {errors.age && <span className="error">{errors.age.message}</span>}
-          </div>
-          <div className="column">
-            <label htmlFor="select__age">Gender</label>
-            <select id="select__age" {...register("gender")}>
-              <option value={1}>Male</option>
-              <option value={0}>Female</option>
-            </select>
-            {errors.gender && (
-              <span className="error">{errors.gender.message}</span>
-            )}
-          </div>
-          <div className="column col-span-2">
-            <button type="submit">Save</button>
-          </div>
-        </form>
-      </Modal>
     </div>
+  </div>
+
+  <Modal
+    title="Change avatar"
+    open={isOpenChangeAvatar}
+    centered
+    onCancel={() => setIsOpenChangeAvatar(false)}
+    footer={null}
+    maskClosable={false}
+    width={600}
+    destroyOnClose
+  >
+    <div className="change-avatar">
+      <label htmlFor="input__image">Select image</label>
+      <input
+        type="file"
+        id="input__image"
+        name="input__image"
+        accept="image/*"
+        ref={inputImageRef}
+      />
+      <div className="change-avatar__footer">
+        <button onClick={handleChangeAvatar}>Save</button>
+      </div>
+    </div>
+  </Modal>
+
+  <Modal
+    title="Edit profile"
+    open={isOpenChageUserInfo}
+    centered
+    onCancel={() => setIsOpenChageUserInfo(false)}
+    footer={null}
+    maskClosable={false}
+    width={700}
+    destroyOnClose
+  >
+    <form
+      onSubmit={handleSubmit(handleUpdateUserInfo)}
+      className="edit-profile"
+    >
+      <div className="column">
+        <label htmlFor="input_first_name">First Name</label>
+        <input
+          id="input_first_name"
+          type="text"
+          placeholder="Enter your first name"
+          {...register("firstName")}
+        />
+        {errors.firstName && (
+          <span className="error">{errors.firstName.message}</span>
+        )}
+      </div>
+      <div className="column">
+        <label htmlFor="input_last_name">Last Name</label>
+        <input
+          id="input_last_name"
+          type="text"
+          placeholder="Enter your last name"
+          {...register("lastName")}
+        />
+        {errors.lastName && (
+          <span className="error">{errors.lastName.message}</span>
+        )}
+      </div>
+      <div className="column">
+        <label htmlFor="input_email">Email</label>
+        <input
+          id="input_email"
+          name="input_email"
+          type="text"
+          placeholder="Enter your email"
+          readOnly
+          value={profile.email}
+        />
+      </div>
+      <div className="column">
+        <label htmlFor="input_address">Address</label>
+        <input
+          id="input_address"
+          type="text"
+          placeholder="Enter your address"
+          {...register("address")}
+        />
+        {errors.address && (
+          <span className="error">{errors.address.message}</span>
+        )}
+      </div>
+      <div className="column">
+        <label htmlFor="input_age">Age</label>
+        <input
+          id="input_age"
+          type="text"
+          placeholder="Enter your age"
+          {...register("age")}
+        />
+        {errors.age && <span className="error">{errors.age.message}</span>}
+      </div>
+      <div className="column">
+        <label htmlFor="select__age">Gender</label>
+        <select id="select__age" {...register("gender")}>
+          <option value={1}>Male</option>
+          <option value={0}>Female</option>
+        </select>
+        {errors.gender && (
+          <span className="error">{errors.gender.message}</span>
+        )}
+      </div>
+      <div className="column col-span-2">
+        <button type="submit">Save</button>
+      </div>
+    </form>
+  </Modal>
+</div>
   );
 };
 export default Profile;

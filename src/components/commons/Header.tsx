@@ -55,7 +55,6 @@ const Header: React.FunctionComponent<HeaderProps> = () => {
             <p>Communication</p>
           </div>
         </Link>
-
         <div className="header__right">
           <div className="header__actions">
             {/* <IoNotificationsOutline className="header__icon" /> */}
@@ -113,3 +112,5 @@ const Header: React.FunctionComponent<HeaderProps> = () => {
 };
 
 export { Header };
+
+

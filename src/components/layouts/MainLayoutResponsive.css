@@ -1,0 +1,128 @@
+.main-layout {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "sidebar main";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+  }
+  
+  .header {
+    grid-area: header;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+  }
+  
+  .outlet {
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  
+  .overlay-call-notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  
+  .overlay-call-notification.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal-call-notification {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-call-notification img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .modal-call-notification .name {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .modal-call-notification .calling-label {
+    display: block;
+    margin-bottom: 15px;
+    color: #666;
+  }
+  
+  .modal-call-notification__footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btn-accept, .btn-cancel {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-accept {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .btn-cancel {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .main-layout {
+      grid-template-areas:
+        "header"
+        "main";
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+      display: none;
+    }
+  
+    .outlet {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .modal-call-notification {
+      padding: 15px;
+      width: 90%;
+      max-width: 300px;
+    }
+  
+    .modal-call-notification img {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .btn-accept, .btn-cancel {
+      padding: 8px 15px;
+    }
+  }

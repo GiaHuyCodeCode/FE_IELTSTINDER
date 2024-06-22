@@ -8,7 +8,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
     h3 {
       font-size: 24px;
       font-weight: 500;
@@ -214,6 +213,130 @@
       font-size: 14px;
       font-weight: 400;
       color: red;
+    }
+  }
+}
+
+
+
+
+@media (max-width : 768px) {
+  .profile-page {
+    padding-right: 10px;
+    padding-bottom: 40px;
+  
+    &__header {
+      width: 100%;
+      display: block;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      h3 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      button {
+        width: 150px;
+        height: 36px;
+        transition: all 0.3s;
+        background-color: transparent;
+        font-size: 16px;
+        font-weight: 500;
+        border: 1px solid #35509a;
+        color: #000;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 6px;
+  
+        &:hover {
+          background-color: #35509a;
+          color: #fff;
+        }
+      }
+    }
+  
+    &__content {
+      margin-top: 20px;
+      width: 100%;
+      display: block;
+      flex-direction: row;
+      align-items: start;
+      gap: 40px;
+
+      .profile-page__avatar {
+        display: flex;
+      }
+  
+      img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        margin:  0 auto;
+      }
+  
+      .user-info {
+        margin-top: 12px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 15px;
+        .name {
+          font-size: 24px;
+          font-weight: 600;
+          margin-left: 12px;
+        }
+        .user-info__item {
+           .user-info__text{
+            margin-left: 12px;
+           }
+        }
+      }
+    }
+  
+    &__description {
+      width: 100%;
+      margin-top: 20px;
+      p {
+        font-size: 16px;
+      }
+    }
+  
+    &__posts {
+      margin-top: 20px;
+  
+      &__header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+  
+        h3 {
+          font-size: 24px;
+          font-weight: 500;
+        }
+  
+        button {
+          width: 150px;
+          height: 36px;
+          transition: all 0.3s;
+          background-color: transparent;
+          font-size: 16px;
+          font-weight: 500;
+          border: 1px solid #35509a;
+          color: #000;
+          border-radius: 5px;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: #35509a;
+            color: #fff;
+          }
+        }
+      }
     }
   }
 }

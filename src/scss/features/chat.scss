@@ -23,7 +23,7 @@
 
 .content {
   background-color: $bg-white;
-  width: 380px;
+  width: calc(100% - 10%);
 
   &__header {
     width: 100%;
@@ -568,5 +568,19 @@
         font-weight: 600;
       }
     }
+  }
+}
+
+
+
+
+@media (max-width : 768px) {
+ 
+
+  .content {
+    background-color: $bg-white;
+    width: calc(100% - 40%);
+  
+   
   }
 }

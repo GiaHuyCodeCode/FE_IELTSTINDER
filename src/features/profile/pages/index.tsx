@@ -2,6 +2,7 @@ import React from "react";
 import "./Profile.style.css";
 import avt from "../../../assets/images/avt.jpg";
 import Myvideo from "../../../components/MyVideo/MyVideo";
+import "./src/features/profile/ProfileResponsive.css";
 
 interface ProfilePageProps {}
 
