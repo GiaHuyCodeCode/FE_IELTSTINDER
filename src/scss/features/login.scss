@@ -6,6 +6,8 @@
 
 .login-page,
 .register-page {
+
+
   width: 100%;
   min-height: 100vh;
   max-height: 100vh;
@@ -65,4 +67,65 @@
     margin-top: 16px;
     margin-bottom: 20px;
   }
+}
+
+
+
+@media (max-width : 768px) {
+  
+  .login-page , .register-page {
+    display: block;
+
+
+
+    img {
+      width: 100%;
+   
+    }
+  }
+
+
+  .login-form,
+.register-form {
+  width: 100%;
+  height: 100%;
+  padding: 20px 10px;
+  border-radius: 6px;
+
+  &__footer {
+    font-size: 16px;
+    font-weight: 300;
+    color: #7d7d7d;
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+
+    .link {
+      font-weight: 600;
+      color: #03045e;
+    }
+  }
+
+  .welcome {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .title {
+    margin-top: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 700;
+
+    h2 {
+      font-weight: 500;
+      font-size: 32px;
+    }
+    span {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+}
 }

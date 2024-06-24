@@ -102,6 +102,7 @@ const Register: React.FunctionComponent<IRegisterProps> = () => {
   return (
     <>
       <div className="register-page">
+     
         <form onSubmit={handleSubmit(onSubmit)} className="register-form">
           <h2 className="welcome">Welcome!</h2>
           <div className="title">
