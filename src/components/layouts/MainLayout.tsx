@@ -164,7 +164,7 @@ const MainLayout: React.FunctionComponent<MainLayoutProps> = () => {
             meetingId: isStartedCall,
             micEnabled: true,
             webcamEnabled: true,
-            name: `${profile?.first_name || ""} ${profile?.last_name || ""}`,
+            name: `${profile?.firstName || ""} ${profile?.lastName || ""}`,
             participantId: `${profile?.id || 0}`,
             multiStream: true,
             mode: "CONFERENCE", // "CONFERENCE" || "VIEWER"

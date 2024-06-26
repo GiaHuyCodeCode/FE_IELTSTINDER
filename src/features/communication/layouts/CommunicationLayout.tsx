@@ -9,7 +9,7 @@ const CommunicationLayout: React.FunctionComponent<
 > = () => {
   return (
     <div className="communication-layout">
-      <div className="communication-layout__header">
+      <div className="communication-layout__header" id="communication-layout__header">
         <NavLink to={"/communication"} className={classNames("tab")} end>
           Recommend
         </NavLink>

@@ -70,11 +70,11 @@ const Header: React.FunctionComponent<HeaderProps> = () => {
             >
               <p>
                 Hello,
-                <span>{` ${profile?.first_name || ""} ${
-                  profile?.last_name || ""
+                <span>{` ${profile?.firstName || ""} ${
+                  profile?.lastName || ""
                 }`}</span>
               </p>
-              <p>User</p>
+              {/* <p>User</p> */}
             </div>
             <img
               className="avatar"

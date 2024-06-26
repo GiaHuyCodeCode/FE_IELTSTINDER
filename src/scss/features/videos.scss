@@ -36,6 +36,7 @@
   &__content {
     margin-top: 20px;
     width: 100%;
+    max-width: 100%;
 
     .pagination {
       width: 100%;
@@ -123,5 +124,12 @@
   &:hover {
     text-decoration: underline;
     color: #000;
+  }
+}
+
+
+@media (max-width :768px) {
+  .ant-table {
+    overflow-x: scroll;
   }
 }

@@ -50,8 +50,8 @@ export interface UpdateFormProps {
 
 const initialState: UserProfileModel = {
   id: 0,
-  first_name: "",
-  last_name: "",
+  firstName: "",
+  lastName: "",
   email: "",
   address: "",
   gender: "",
@@ -155,8 +155,8 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
 
   useEffect(() => {
     if (isOpenChageUserInfo) {
-      setValue("firstName", profile.first_name);
-      setValue("lastName", profile.last_name);
+      setValue("firstName", profile.firstName);
+      setValue("lastName", profile.lastName);
       setValue("address", profile.address);
       setValue("gender", profile.gender === "Male" ? 1 : 0);
       setValue("age", profile.age);
@@ -360,7 +360,7 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
       <div className="user-info">
         <div className="user-info__item">
           <FaUser className="user-info__icon" />
-          <span className="user-info__text name">{`${profile.first_name} ${profile.last_name}`}</span>
+          <span className="user-info__text name">{`${profile.firstName} ${profile.lastName}`}</span>
         </div>
         <div className="user-info__item">
           <MdAlternateEmail className="user-info__icon" />
@@ -444,9 +444,9 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
       className="edit-profile"
     >
       <div className="column">
-        <label htmlFor="input_first_name">First Name</label>
+        <label htmlFor="input_firstName">First Name</label>
         <input
-          id="input_first_name"
+          id="input_firstName"
           type="text"
           placeholder="Enter your first name"
           {...register("firstName")}

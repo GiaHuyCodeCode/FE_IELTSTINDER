@@ -300,7 +300,7 @@ $main-bg: #f3f4f6;
       }
   
       .user-detail {
-        margin: 0 8px;
+        margin: 0 0 0 8px;
         display: flex;
         flex-direction: column;
         align-items: end;
@@ -313,8 +313,8 @@ $main-bg: #f3f4f6;
           padding: 0;
   
           span {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 700;
           }
   
           &:last-child {

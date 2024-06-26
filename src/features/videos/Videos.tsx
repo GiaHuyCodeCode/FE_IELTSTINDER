@@ -182,7 +182,7 @@ const Videos: React.FunctionComponent<VideosProps> = () => {
           </button>
         </div>
         <div className="videos-page__content">
-          <Table columns={columns} dataSource={data.posts} pagination={false} />
+          <Table columns={columns} dataSource={data.posts} pagination={false} className="videos-page__table"  />
           {data.total !== 0 && (
             <div className="pagination">
               <Pagination
